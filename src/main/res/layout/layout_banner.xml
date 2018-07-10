@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="top"
+        android:layout_margin="10dp"
+        android:id="@+id/banner_msg_img"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/banner_msg_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="2"
+            android:padding="2.5dp"
+            android:layout_alignParentRight="false"
+            android:text="Push Message Title"
+            android:textColor="#222222"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/banner_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_cancel_black_24dp" />
+
+        <TextView
+            android:id="@+id/banner_msg_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner_msg_title"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif"
+            android:maxLines="2"
+            android:padding="2.5dp"
+            android:text="Push Message Body"
+            android:textColor="#444444"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+</LinearLayout>
