@@ -1,5 +1,6 @@
 package com.example.pushoffer;
 
+import android.animation.LayoutTransition;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -53,7 +54,6 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-
     public void setView(final Activity act, final View layout) {
         container.addView(layout);
         PushOffer.setView(act, banner);
@@ -63,37 +63,50 @@ public class BaseActivity extends AppCompatActivity {
             banner.cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    TranslateAnimation transAnim;
+                    LayoutTransition t=new LayoutTransition();
+                    t.enableTransitionType(LayoutTransition.CHANGING);
+                    t.setDuration(3000);
+//                    frame.getLayoutTransition().setDuration(LayoutTransition.CHANGING,3000);
+                    frame.setLayoutTransition(t);
+                    banner.setVisibility(View.GONE);
 
-                    if (PushOffer.isTop()) {
-                        transAnim = slideUp(banner.getHeight());
-                    } else {
-                        transAnim = slideDown(banner.getHeight());
-                    }
-
-                    transAnim.setDuration(1000);
-                    transAnim.setFillBefore(true);
-                    transAnim.setAnimationListener(new Animation.AnimationListener() {
-                        @Override
-                        public void onAnimationStart(Animation animation) {
-
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animation animation) {
-                            banner.setVisibility(View.GONE);
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animation animation) {
-
-                        }
-                    });
-                    frame.startAnimation(transAnim);
+//                    TranslateAnimation transAnim;
+//                    TranslateAnimation t;
+//
+//                    if (PushOffer.isTop()) {
+//                        transAnim = slideUp(banner.getHeight());
+//                        t = slideCUp(banner.getHeight());
+//
+//                    } else {
+//                        transAnim = slideDown(banner.getHeight());
+//                        t = slideCDown(banner.getHeight());
+//
+//                    }
+//
+//                    transAnim.setDuration(1000);
+//                    transAnim.setAnimationListener(new Animation.AnimationListener() {
+//                        @Override
+//                        public void onAnimationStart(Animation animation) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onAnimationEnd(Animation animation) {
+//                            banner.setVisibility(View.GONE);
+//                        }
+//
+//                        @Override
+//                        public void onAnimationRepeat(Animation animation) {
+//
+//                        }
+//                    });
+//
+//                    t.setDuration(10000);
+//                    banner.startAnimation(transAnim);
+//                    container.startAnimation(t);
                     PushOffer.changeCancelledFlag(act);
                 }
             });
-
 
         } catch (Exception e) {
 
@@ -112,6 +125,25 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private TranslateAnimation slideDown(float height) {
+        Log.d("TAG", "slideDown: ");
+        return new TranslateAnimation(
+                0,
+                0,
+                0, height
+        );
+    }
+
+    private TranslateAnimation slideCUp(float height) {
+        Log.d("TAG", "slideup: ");
+        return new TranslateAnimation(
+                0,
+                0,
+                0,
+                -height
+        );
+    }
+
+    private TranslateAnimation slideCDown(float height) {
         Log.d("TAG", "slideDown: ");
         return new TranslateAnimation(
                 0,

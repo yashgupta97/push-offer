@@ -6,7 +6,7 @@ ext {
 
     publishedGroupId = 'com.github.yashgupta97'
     libraryName = 'PushOffer'
-    artifact = 'push-offer'
+    artifact = 'pushoffer'
 
     libraryDescription = 'A library to display Push messages in activities.'
 

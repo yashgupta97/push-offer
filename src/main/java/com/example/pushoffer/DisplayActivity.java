@@ -71,8 +71,6 @@ public class DisplayActivity extends AppCompatActivity {
         @NonNull
         @Override
         public OfferViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//            LayoutInflater li =   getLayoutInflater();
-//            View convertView = li.inflate(R.layout.list_item, viewGroup, false);
 
             View convertView= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item,viewGroup,false);
 
