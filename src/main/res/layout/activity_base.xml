@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BaseActivity">
+    tools:context=".Activities.BaseActivity">
 
     <com.example.pushoffer.CustomAlertViews.PushLayout
         android:id="@+id/act_banner"

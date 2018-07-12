@@ -12,8 +12,6 @@ public interface DbStrings {
     String TYPE_INT_PK = " INTEGER PRIMARY KEY";
     String TYPE_INT_PK_AI = " INTEGER PRIMARY KEY AUTOINCREMENT";
 
-
-
     String ORDER_DESC = " DESC";
 
     String CMD_CREATE_TABLE_INE = " CREATE TABLE IF NOT EXISTS ";
